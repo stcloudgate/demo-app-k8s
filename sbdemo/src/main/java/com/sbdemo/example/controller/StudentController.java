@@ -51,4 +51,6 @@ public class StudentController {
         logger.info("Deleting student by id");
         studentRepository.deleteById(id);
     }
+    
+    
 }

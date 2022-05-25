@@ -1,0 +1,15 @@
+
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: svc-sbdemo
+  labels:
+    svc: svc-sbdemo
+spec:
+  type: ClusterIP
+  ports:
+  - name: svc-sbdemo-port  
+    port: 80
+    protocol: TCP
+  selector:
+    app: sbdemo-api

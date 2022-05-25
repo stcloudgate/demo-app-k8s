@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sbdemo-api
+  labels:
+    app: sbdemo-api
+spec:
+  replicas: 2
+  selector:
+     matchLabels:
+       app: sb-api-pod
+  template:
+    metadata:
+      labels:
+        app: sb-api-pod
+    spec:
+      containers:
+      - name: sb-api-pod
+        image: stmum0107/sbdemo:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
